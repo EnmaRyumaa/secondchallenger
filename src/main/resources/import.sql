@@ -1,29 +1,25 @@
--- Inserindo Categorias
-INSERT INTO categoria (id, nome) VALUES (1, 'Esportes');
-INSERT INTO categoria (id, nome) VALUES (2, 'Lazer');
+-- Inserção na tabela Categoria
+INSERT INTO Categoria (id, descricao) VALUES (1, 'Categoria de Esporte');
+INSERT INTO Categoria (id, descricao) VALUES (2, 'Categoria de Música');
 
--- Inserindo Atividades
-INSERT INTO atividade (id, nome, descricao, preco, categoria_id)
-VALUES (1, 'Corrida 5K', 'Corrida para iniciantes', 30.0, 1);
-INSERT INTO atividade (id, nome, descricao, preco, categoria_id)
-VALUES (2, 'Cinema ao Ar Livre', 'Sessão de filmes ao ar livre', 50.0, 2);
+-- Inserção na tabela Participante
+INSERT INTO Participante (id, nome, email) VALUES (1, 'João Silva', 'joao.silva@email.com');
+INSERT INTO Participante (id, nome, email) VALUES (2, 'Maria Souza', 'maria.souza@email.com');
+INSERT INTO Participante (id, nome, email) VALUES (3, 'Pedro Oliveira', 'pedro.oliveira@email.com');
+INSERT INTO Participante (id, nome, email) VALUES (4, 'Ana Santos', 'ana.santos@email.com');
 
--- Inserindo Participantes
-INSERT INTO participante (id, nome, email) VALUES (1, 'João Silva', 'joao.silva@example.com');
-INSERT INTO participante (id, nome, email) VALUES (2, 'Maria Oliveira', 'maria.oliveira@example.com');
-INSERT INTO participante (id, nome, email) VALUES (3, 'Carlos Pereira', 'carlos.pereira@example.com');
-INSERT INTO participante (id, nome, email) VALUES (4, 'Ana Santos', 'ana.santos@example.com');
+-- Inserção na tabela Atividade
+INSERT INTO Atividade (id, nome, descricao, preco, categoria_id) VALUES (1, 'Futebol', 'Partida de futebol amador', 50.00, 1);
+INSERT INTO Atividade (id, nome, descricao, preco, categoria_id) VALUES (2, 'Show de Rock', 'Concerto ao vivo de rock', 120.00, 2);
 
--- Relacionando Atividades e Participantes (Tabela de Associação)
+-- Inserção na tabela de relacionamento muitos-para-muitos entre Atividade e Participante
 INSERT INTO atividade_participante (atividade_id, participante_id) VALUES (1, 1);
 INSERT INTO atividade_participante (atividade_id, participante_id) VALUES (1, 2);
-INSERT INTO atividade_participante (atividade_id, participante_id) VALUES (2, 3);
+INSERT INTO atividade_participante (atividade_id, participante_id) VALUES (1, 3);
+INSERT INTO atividade_participante (atividade_id, participante_id) VALUES (2, 2);
 INSERT INTO atividade_participante (atividade_id, participante_id) VALUES (2, 4);
 
--- Inserindo Blocos
-INSERT INTO bloco (id, nome, horario_inicio, horario_fim, atividade_id)
-VALUES (1, 'Bloco da Manhã', '08:00', '10:00', 1);
-INSERT INTO bloco (id, nome, horario_inicio, horario_fim, atividade_id)
-VALUES (2, 'Bloco da Tarde', '14:00', '16:00', 1);
-INSERT INTO bloco (id, nome, horario_inicio, horario_fim, atividade_id)
-VALUES (3, 'Bloco da Noite', '18:00', '20:00', 2);
+-- Inserção na tabela Bloco
+INSERT INTO Bloco (id, inicio, fim, atividade_id) VALUES (1, '2024-08-01 09:00:00', '2024-08-01 11:00:00', 1);
+INSERT INTO Bloco (id, inicio, fim, atividade_id) VALUES (2, '2024-08-01 14:00:00', '2024-08-01 16:00:00', 1);
+INSERT INTO Bloco (id, inicio, fim, atividade_id) VALUES (3, '2024-08-05 18:00:00', '2024-08-05 21:00:00', 2);
